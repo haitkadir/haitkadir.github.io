@@ -1,7 +1,7 @@
 ---
 title: MR_Robot_CTF
 date: 2023-08-22 16:26:16 +0800
-categories: [Tryhackme, medium]
+categories: [Tryhackme, mr-robot-ctf]
 tags: [thm, ctf, pentesting, web, unix, prev-esc]
 ---
 
