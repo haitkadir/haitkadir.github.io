@@ -6,7 +6,7 @@ tags: [htb, ctf, pentesting, web, code-auditing]
 ---
 
 
-![](../../assets/global/banner.png)
+<img src="../../assets/global/banner.png" alt="banner image">
 
 
 ### Description:
