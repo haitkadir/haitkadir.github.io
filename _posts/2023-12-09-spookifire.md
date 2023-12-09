@@ -1,7 +1,7 @@
 ---
 title: Spookifire
 date: 2023-12-09 15:53:16 +0800
-categories: [Hackthebox, spookifire]
+categories: [Hackthebox-Challenges, spookifire]
 tags: [htb, ctf, pentesting, web, code-auditing]
 ---
 
