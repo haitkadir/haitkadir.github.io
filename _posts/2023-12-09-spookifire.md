@@ -1,8 +1,8 @@
 ---
 title: Spookifire
-date: 2023-08-22 15:53:16 +0800
-categories: [Hackthebox, soccer]
-tags: [htb, ctf, pentesting, web, unix, prev-esc]
+date: 2023-12-09 15:53:16 +0800
+categories: [Hackthebox, spookifire]
+tags: [htb, ctf, pentesting, web, code-auditing]
 ---
 
 
