@@ -15,6 +15,11 @@ tags: [htb, ctf, pentesting, web, code-auditing]
 Simply this challenge takes user input a print it different fornts
 but the problem is it doesn't do any sanitizing and it passes the payload to Mako tamplete Engine to be rendered.
 
+### Source code:
+<a href='https://mega.nz/file/OexhiY5B#Q_Zv1UmJpz6XH365b_XSArulT7LUWtLQWZ3etvwLu5w'>Download source code</a>
+
+*zip password: `hackthebox`*
+
 ### Vulnerable code:
 ```python
 from mako.template import Template
