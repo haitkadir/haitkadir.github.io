@@ -75,12 +75,12 @@ we can't do that but after some code auditing it was using switch case,\
 
 to understand more about this issue take a look at `switch case` manual in php.net.
 
-<img src="../../assets/global/juggling_facts/loose-comparison.png" alt="lose comparison image">
+<img src="../../assets/juggling_facts/loose-comparison.png" alt="lose comparison image">
 
 so to exploit this take a look at this table provided by `PHP` manual.
 
 
-<img src="../../assets/global/juggling_facts/table.png" alt="lose comparison table image">
+<img src="../../assets/juggling_facts/table.png" alt="lose comparison table image">
 
 As you can see if we have for example `case "secret":` and we pass `true` in the `option(true)` parameter.\
 it will match the secret because it uses only two equals `==` not three.
