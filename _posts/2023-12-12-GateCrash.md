@@ -24,7 +24,7 @@ but to achieve that you have to bypass proxy server because it's only allwing *a
 
 ### proxy server:
 coded in `nim-lang`
-```py
+```nim
 import asyncdispatch, strutils, jester, httpClient, json
 import std/uri
 
@@ -191,7 +191,7 @@ func main() {
 ```
 
 ### vulnerable code:
-```py
+```nim
     let client = newHttpClient(userAgent) # in proxy server
 ```
 and 
