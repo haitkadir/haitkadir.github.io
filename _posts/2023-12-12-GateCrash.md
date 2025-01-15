@@ -6,7 +6,7 @@ tags: [htb, ctf, pentesting, web, code-auditing]
 ---
 
 
-<img src="../../assets/global/banner.png" alt="banner image">
+<img src="/assets/global/banner.png" alt="banner image">
 
 ## GateCrash is a `Go` and `nim-lang` chalenge on Hackthebox uneversities CTF 2023
 
@@ -20,7 +20,7 @@ but to achieve that you have to bypass proxy server because it's only allwing *a
 *zip password: `hackthebox`*
 
 
-<img src="../../assets/gatecrash/login.png" alt="login image">
+<img src="/assets/gatecrash/login.png" alt="login image">
 
 ### proxy server:
 coded in `nim-lang`

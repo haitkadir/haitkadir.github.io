@@ -6,7 +6,7 @@ tags: [htb, ctf, pentesting, web, code-auditing]
 ---
 
 
-<img src="../../assets/global/banner.png" alt="banner image">
+<img src="/assets/global/banner.png" alt="banner image">
 
 ## Spookifire is a python flask chalenge on Hackthebox
 

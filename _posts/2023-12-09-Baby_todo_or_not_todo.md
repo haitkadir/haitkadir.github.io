@@ -6,7 +6,7 @@ tags: [htb, ctf, pentesting, web, code-auditing, broken-access-control]
 ---
 
 
-<img src="../../assets/global/banner.png" alt="banner image">
+<img src="/assets/global/banner.png" alt="banner image">
 
 ## Baby_todo_or_not_todo is a python flask chalenge on Hackthebox
 
@@ -20,7 +20,7 @@ for each `todos` on a per-user basis
 
 *zip password: `hackthebox`*
 
-<img src="../../assets/baby-todo/home.png" alt="banner image">
+<img src="/assets/baby-todo/home.png" alt="banner image">
 
 ### Code Auditing:
 
@@ -93,13 +93,13 @@ INSERT INTO `todos` (`name`, `done`, `assignee`) VALUES
 
 if we intercept a request using `burpSuite`
 
-<img src="../../assets/baby-todo/intercept1.png" alt="intercept1 image">
+<img src="/assets/baby-todo/intercept1.png" alt="intercept1 image">
 
 We can se a `cookie` is being sent with the request and it contains a user generated randomly.\
 And alos a `secret`.
 
 Now if let's try to access all todos by changing the endpoint from `/api/list/user<user>/?secret=<secret>` to `/api/list/all` endpoint and see what will happen.
-<img src="../../assets/baby-todo/intercept2.png" alt="intercept2 image">
+<img src="/assets/baby-todo/intercept2.png" alt="intercept2 image">
 
 We got `not allowed`
 
@@ -178,7 +178,7 @@ def verify_integrity:
 1 Intercept request.\
 2 change the endpoint to `/api/list/all/?secret=<secret>` and don't forget the pass the secret and you'll get the flag.
 
-<img src="../../assets/baby-todo/intercept3.png" alt="intercept3 image">
+<img src="/assets/baby-todo/intercept3.png" alt="intercept3 image">
 
 
 
