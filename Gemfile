@@ -2,6 +2,7 @@
 
 gem 'csv'
 gem 'logger'
+gem 'base64'
 
 source "https://rubygems.org"
 
