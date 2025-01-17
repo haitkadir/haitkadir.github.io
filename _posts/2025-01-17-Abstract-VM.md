@@ -26,6 +26,7 @@ Abstract VM is a C++ project designed to create a simple stack-based virtual mac
 Abstract VM executes programs written in its own assembly language. Each program consists of sequential instructions, with one instruction per line. Comments start with `;` and continue to the end of the line.
 
 #### Example Program
+
 ```assembly
 ; A simple program to add two numbers  
 push int32(42)  
@@ -34,6 +35,7 @@ add
 dump  
 exit  
 ```
+
 #### Supported Instructions
 
 - `push v`: Pushes a value `v` onto the stack. Example: `push int32(42)`.
@@ -47,6 +49,7 @@ exit
 #### Error Handling
 
 Abstract VM identifies and handles the following errors:
+
 - Lexical or syntactic errors in the program.
 - Invalid instructions or unsupported operations.
 - Stack underflow (e.g., `pop` or arithmetic on an empty stack).
@@ -65,6 +68,7 @@ Abstract VM uses a stack to store operands, represented as pointers to objects o
 #### Operand Types
 
 The machine supports the following types:
+
 - **Int8**, **Int16**, **Int32**: Represent signed integers of different bit-widths.
 - **Float**, **Double**: Represent single-precision and double-precision floating-point numbers.
 
@@ -76,10 +80,13 @@ When performing operations between operands of different types, the result is ca
 #### Operand Factory
 
 Abstract VM uses a factory pattern to dynamically create operands. The factory uses private methods for each type, selected based on an enumeration value.
+
 ```cpp
 IOperand const * createOperand(eOperandType type, std::string const & value) const;
 ```
-Depending on the type, it calls one of these methods:  
+
+Depending on the type, it calls one of these methods:
+
 ```cpp
 - createInt8(std::string const & value)  
 - createInt16(std::string const & value)  
@@ -87,9 +94,11 @@ Depending on the type, it calls one of these methods:
 - createFloat(std::string const & value)  
 - createDouble(std::string const & value)  
 ```
+
 #### IOperand Interface
 
 The `IOperand` interface defines the behavior of all operand types. It ensures that all operands support arithmetic operations and type inspection.
+
 ```cpp
 class IOperand {  
 public:  
@@ -107,12 +116,15 @@ public:
     virtual ~IOperand(void) {} // Virtual destructor  
 };  
 ```
+
 ---
 
 ### Grammar of the Assembly Language
 
 The syntax of Abstract VM’s assembly language is formalized as follows:
+
 - **Instruction Format**: INSTRUCTION VALUE
+
 - **Value Types**:
   - int8(n)
   - int16(n)
@@ -120,6 +132,7 @@ The syntax of Abstract VM’s assembly language is formalized as follows:
   - float(z)
   - double(z)
 - **Example Program**:
+
 ```assembly
     push int32(42)  
     push float(3.14)  
@@ -127,35 +140,41 @@ The syntax of Abstract VM’s assembly language is formalized as follows:
     dump  
     exit  
 ```
+
 ---
 
 ### Execution Examples
 
 1. **Running from Standard Input**:
-```assembly
-    $ ./avm  
-    push int32(42)  
-    push int32(33)  
-    add  
-    dump  
-    exit  
-    ;;  
 
-    75  
-```
+   ```assembly
+        $ ./avm  
+        push int32(42)  
+        push int32(33)  
+        add  
+        dump  
+        exit  
+        ;;  
+
+        75  
+   ```
+
 2. **Running from a File**:
-```assembly
+
+   ```assembly
     $ cat program.avm  
     push int32(42)  
     push float(3.14)  
     add  
     dump  
     exit  
-```
+   ```
+
 ```shell
     $ ./avm program.avm  
     45.14  
 ```
+
 ---
 
 ### Conclusion
