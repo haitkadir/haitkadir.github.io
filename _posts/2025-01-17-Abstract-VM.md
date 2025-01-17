@@ -145,35 +145,41 @@ The syntax of Abstract VM’s assembly language is formalized as follows:
 
 ### Execution Examples
 
-1. **Running from Standard Input**:
+- **Running from Standard Input**:
 
-   ```assembly
-        $ ./avm  
-        push int32(42)  
-        push int32(33)  
-        add  
-        dump  
-        exit  
-        ;;  
+```assembly
+    $ ./avm  
+    push int32(42)  
+    push int32(33)  
+    add  
+    dump  
+    exit  
+    ;;  
 
-        75  
-   ```
+    75  
+```
 
-2. **Running from a File**:
+- **Running from a File**:
 
-   ```assembly
+```assembly
     $ cat program.avm  
     push int32(42)  
     push float(3.14)  
     add  
     dump  
     exit  
-   ```
+```
 
 ```shell
     $ ./avm program.avm  
     45.14  
 ```
+
+---
+
+### Check out the project here:
+
+- [AbstracVM](https://github.com/haitkadir/AbstractVM)
 
 ---
 
