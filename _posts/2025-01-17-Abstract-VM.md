@@ -27,7 +27,7 @@ Abstract VM executes programs written in its own assembly language. Each program
 
 #### Example Program
 
-```assembly
+```shell
 ; A simple program to add two numbers  
 push int32(42)  
 push int32(33)  
@@ -133,7 +133,7 @@ The syntax of Abstract VM’s assembly language is formalized as follows:
   - double(z)
 - **Example Program**:
 
-```assembly
+```shell
     push int32(42)  
     push float(3.14)  
     mul  
@@ -147,7 +147,7 @@ The syntax of Abstract VM’s assembly language is formalized as follows:
 
 - **Running from Standard Input**:
 
-```assembly
+```shell
     $ ./avm  
     push int32(42)  
     push int32(33)  
@@ -161,7 +161,7 @@ The syntax of Abstract VM’s assembly language is formalized as follows:
 
 - **Running from a File**:
 
-```assembly
+```shell
     $ cat program.avm  
     push int32(42)  
     push float(3.14)  
